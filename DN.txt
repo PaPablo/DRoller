@@ -1,0 +1,8 @@
+
+
+Tirada
+
+- Genera y borra combinación de Dados (con o sin modificadores)
+- Realiza la tirada
+- Guarda las últimas tiradas para acceso rápido
+-? Generar Perfiles (bue)
