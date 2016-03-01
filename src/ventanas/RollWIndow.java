@@ -17,11 +17,11 @@ public class RollWIndow extends javax.swing.JFrame {
     /**
     * Actualiza las filas con la tirada realizada
     * 
-    * 
+    * Necesito poder tirar la tabla vacida y 
+    * agregarle filas a lo largo de las tiradas
     */
     
     public void UpdateRow(String t, String i, int a,int b){
-        
         TablaTir.setValueAt(t, row, col);
         this.col++;
         TablaTir.setValueAt(a, row, col);
@@ -44,10 +44,6 @@ public class RollWIndow extends javax.swing.JFrame {
         SetColumnSize();
         
         SetColumnRenderer();
-        
-        
-        
-        
         
     }
     
@@ -90,7 +86,7 @@ public class RollWIndow extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaTir = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        RollButton = new javax.swing.JButton();
         plus = new javax.swing.JRadioButton();
         minus = new javax.swing.JRadioButton();
 
@@ -165,10 +161,10 @@ public class RollWIndow extends javax.swing.JFrame {
         TablaTir.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablaTir);
 
-        jButton1.setText("Roll");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RollButton.setText("Roll");
+        RollButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RollButtonActionPerformed(evt);
             }
         });
 
@@ -196,7 +192,7 @@ public class RollWIndow extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addComponent(RollButton)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(jLabel3)
@@ -237,7 +233,7 @@ public class RollWIndow extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
-                        .addComponent(jButton1))
+                        .addComponent(RollButton))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(plus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,7 +252,7 @@ public class RollWIndow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RollButtonActionPerformed
         
         String cant = jTextField1.getText();
         int q = Integer.parseInt(cant);
@@ -276,7 +272,7 @@ public class RollWIndow extends javax.swing.JFrame {
         System.out.println("Fuera de Rango");
         }
         String tirada = cant + 'd' + (String) jComboBox.getSelectedItem();
-        String indr = Integer.toString(t[q]);
+        String indr = Integer.toString(t[1]);
         
         if (q>1) {
             for (int i = 2; i < q+1; i++){
@@ -286,7 +282,7 @@ public class RollWIndow extends javax.swing.JFrame {
         
         UpdateRow(tirada,indr,m,t[q+1]);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RollButtonActionPerformed
 
     private void jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActionPerformed
         // TODO add your handling code here:
@@ -306,10 +302,6 @@ public class RollWIndow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_minusActionPerformed
 
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -348,9 +340,9 @@ public class RollWIndow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RollButton;
     private javax.swing.JTable TablaTir;
     private javax.swing.ButtonGroup grupoMods;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

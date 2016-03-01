@@ -1,6 +1,5 @@
 package main;
 
-import dados.DieComb;
 import ventanas.RollWIndow;
 
 
