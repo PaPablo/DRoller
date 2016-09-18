@@ -89,6 +89,15 @@ public class DieComb {
         return tir;
     }
     
+    private String getMods(){
+    	String out = "";
+    	if(this.mod > 0) out += "+";
+    	else out += "-";
+    	
+    	out += this.mod;
+    	
+    	return out;
+    }
     
     private String valores(){
     	String salida = "";
@@ -102,12 +111,12 @@ public class DieComb {
     	// TODO Auto-generated method stub
     	
     	String salida = String.format(
-    			"Tirada:%s\n"
-    			+ "Modificador:%d\n"
-    			+ "Valores:%s\n"
-    			+ "Total: %d",
+    			"Roll:\t%s\n"
+    			+ "Mods:\t%s\n"
+    			+ "Values:\t%s\n"
+    			+ "Total: \t%d",
     			this.title,
-    			this.tirada[0],
+    			this.getMods(),
     			this.valores(),
     			this.tirada[tirada.length-1]);
     	return salida;
