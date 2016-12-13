@@ -16,5 +16,4 @@ Values:	4 4
 Total:  10  
 ```
 
-
-NOTE: this was made with Java 1.8 so you may want to update java in your computer in order to run DRoller
+Feel free to use for any purpose
