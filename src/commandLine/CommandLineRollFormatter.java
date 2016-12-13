@@ -11,12 +11,19 @@ public class CommandLineRollFormatter {
 	
 	public String showRoll(Roll roll){
 		String values = this.stringValues(roll.getValues());
+		String modifier = String.valueOf(roll.getMod());
+		
+		if(roll.getMod()>0){
+			modifier = "+" + modifier;
+		} else if(roll.getMod() < 0){
+			modifier = "-" + modifier;
+		} 
 		
 		String salida = String.format(
     			"Mods:\t%s\n"
     			+ "Values:\t%s\n"
     			+ "Total: \t%d",
-    			roll.getMod(),
+    			modifier,
     			values,
     			roll.getTotal());
 		
@@ -40,11 +47,8 @@ public class CommandLineRollFormatter {
 		String ret = "";
 		
 		for(int i = 0; i< values.length ; i++){
-			ret = ret + String.valueOf(values[i]);
-			
-			if(((i%values.length) == 0) && (i != values.length-1)){
-				ret = ret + ", ";
-			}
+			ret = ret + String.valueOf(values[i]) + " ";
+
 		}
 		
 		return ret;

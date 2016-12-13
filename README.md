@@ -4,17 +4,12 @@
 
 ### Installation
 1. Clone or download (and unzip) this repository
-2. Then in the command line:
+2. Compile the source code and use it!
 
-`
-$ java -jar DRoller <dice roll>
-`
-
-Dice rolls are in the usual notation like 2d6+1 ,1d20 or 2d8-2.  
+Rolls are in the usual notation like 2d6+1 ,1d20 or 2d8-2.  
 For example: 
 
 ```
-$ java -jar DRoller.jar 2d6+2 
 Roll:   2d6+2  
 Mods:   +2  
 Values:	4 4  

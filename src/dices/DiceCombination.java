@@ -49,7 +49,7 @@ public class DiceCombination {
         
         int i = 0;
         int result;
-        tir[i] = mod;
+        tir[i] = this.mod;
         i++;
         
         for(int j = 0; j < dices.size();j++){
@@ -60,7 +60,6 @@ public class DiceCombination {
         }
         
         tir[i]=total;
-        Arrays.sort(tir);
         return tir;
     }
     
